@@ -24,15 +24,6 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ textAlign: "center", marginTop: "20px" }}>
-      <h1>GPS Coordinates</h1>
-      <p>Latitude: {coords.lat}</p>
-      <p>Longitude: {coords.lon}</p>
-      <p>Status: {coords.status}</p>
-
-      <div style={{ width: "80%", height: "400px", margin: "0 auto" }}>
-        <Map lat={coords.lat} lon={coords.lon} />
-      </div>
-    </div>
+      <Map lat={coords.lat} lon={coords.lon} status={coords.status} />
   );
 }
