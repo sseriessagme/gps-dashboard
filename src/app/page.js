@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 const Map = dynamic(() => import("../components/Map"), { ssr: false });
 
 export default function Home() {
-  const [coords, setCoords] = useState({ lat: 0, lon: 0, status:"" });
+  const [coords, setCoords] = useState({ busid:0, time:"", lat: 0, lon: 0, status:"" });
 
   useEffect(() => {
     const interval = setInterval(async () => {
@@ -24,6 +24,6 @@ export default function Home() {
   }, []);
 
   return (
-      <Map lat={coords.lat} lon={coords.lon} status={coords.status} />
+      <Map  busid={coords.busid} time={coords.time} lon={coords.lon}  lat={coords.lat} status={coords.status} />
   );
 }
